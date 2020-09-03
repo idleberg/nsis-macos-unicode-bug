@@ -17,3 +17,5 @@ jobs:
       run: makensis -VERSION
     - name: Print NSIS compile flags
       run: makensis -HDRINFO
+    - name: Cat demo.nsi
+      run: cat demo.nsi
