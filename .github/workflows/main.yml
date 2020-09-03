@@ -18,4 +18,4 @@ jobs:
     - name: Print NSIS compile flags
       run: makensis -HDRINFO
     - name: Cat demo.nsi
-      run: cat demo.nsi
+      run: cat ../../demo.nsi
