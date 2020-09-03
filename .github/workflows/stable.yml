@@ -18,4 +18,4 @@ jobs:
     - name: Print NSIS compile flags
       run: makensis -HDRINFO
     - name: Compile test-script
-      run: printf "OutFile /dev/null\nUnicode true\nSection\nSectionEnd" | makensis -
+      run: printf "OutFile /dev/null\nUnicode true\nSection\nSectionEnd" | makensis -V4 -
