@@ -1,4 +1,4 @@
-OutFile "installer_name.exe"
+OutFile /dev/null
 Unicode true
 
 Section
