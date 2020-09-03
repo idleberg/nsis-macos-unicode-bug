@@ -1,0 +1,22 @@
+name: NSIS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Install NSIS
+      run: |
+        brew tap nsis-dev/makensis
+        brew update
+        brew install makensis@3.06.1 --with-debug
+    - name: Print NSIS version
+      run: makensis -VERSION
+    - name: Print NSIS compile flags
+      run: makensis -HDRINFO
+    - name: Compile test-script
+      run: printf "OutFile test.exe\nUnicode true\nSection\nSectionEnd" | makensis -
