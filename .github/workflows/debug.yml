@@ -13,7 +13,7 @@ jobs:
       run: |
         brew tap nsis-dev/makensis
         brew update
-        brew install makensis@3.06.1 --with-debug
+        brew install makensis@3.06.1 --with-debug --debug --verbose
     - name: Print NSIS version
       run: makensis -VERSION
     - name: Print NSIS compile flags
