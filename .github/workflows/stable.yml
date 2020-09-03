@@ -12,7 +12,7 @@ jobs:
     - name: Install NSIS
       run: |
        brew update
-       brew install nsis
+       brew install nsis --debug --verbose
     - name: Print NSIS version
       run: makensis -VERSION
     - name: Print NSIS compile flags
