@@ -9,6 +9,7 @@ jobs:
   compile:
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v2
     # - name: Prepare Installation
     #   run: |
     #    brew update
@@ -24,4 +25,6 @@ jobs:
     #   run: makensis -HDRINFO
 
     - name: Compile test-script
-      run: ls -la $GITHUB_WORKSPACE
+      run: |
+        ls -la
+        ls -la $GITHUB_WORKSPACE
