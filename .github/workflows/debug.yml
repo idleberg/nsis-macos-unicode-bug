@@ -9,14 +9,20 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-    - name: Install NSIS
+    - name: Prepare Installation
       run: |
         brew tap nsis-dev/makensis
         brew update
-        brew install makensis@3.06.1 --with-debug --debug --verbose
+        brew cleanup
+
+    - name: Install NSIS
+      run: brew install makensis@3.06.1 --with-debug --debug --verbose
+
     - name: Print NSIS version
       run: makensis -VERSION
+
     - name: Print NSIS compile flags
       run: makensis -HDRINFO
+
     - name: Compile test-script
       run: printf "OutFile /dev/null\nUnicode true\nSection\nSectionEnd" | makensis -V4 -

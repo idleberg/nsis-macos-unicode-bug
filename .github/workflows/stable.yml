@@ -12,10 +12,16 @@ jobs:
     - name: Install NSIS
       run: |
        brew update
-       brew install nsis --debug --verbose
+       brew cleanup
+
+    - name: Install NSIS
+      run: brew install nsis --debug --verbose
+
     - name: Print NSIS version
       run: makensis -VERSION
+
     - name: Print NSIS compile flags
       run: makensis -HDRINFO
+
     - name: Compile test-script
       run: printf "OutFile /dev/null\nUnicode true\nSection\nSectionEnd" | makensis -V4 -
