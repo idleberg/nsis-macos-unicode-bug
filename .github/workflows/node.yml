@@ -35,5 +35,5 @@ jobs:
     - name: Print NSIS header info
       run: makensis -HDRINFO
 
-    - name: Run Node script
+    - name: Compile demo.nsi
       run: node makensis.js
