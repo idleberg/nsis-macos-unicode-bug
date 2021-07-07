@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Print Environment Variables
-      run: env
+      run: env | sort
 
     - name: Prepare Installation
       run: |
@@ -28,5 +28,5 @@ jobs:
     - name: Print NSIS header info
       run: makensis -HDRINFO
 
-    - name: Compile test-script
+    - name: Compile demo.nsi
       run: makensis -V4 demo.nsi

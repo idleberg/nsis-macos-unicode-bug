@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Print Environment Variables
-      run: env
+      run: env | sort
 
     - name: Prepare Installation
       run: |
