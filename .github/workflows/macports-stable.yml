@@ -1,0 +1,30 @@
+name: Homebrew (stable)
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Print Environment Variables
+      run: env | sort
+
+    - name: Prepare Installation
+      uses: keepitsimpletech/actions/setup-macports@setup-macports/releases/v1
+
+    - name: Install NSIS
+      run: port install nsis
+
+    - name: Print NSIS version
+      run: makensis -VERSION
+
+    - name: Print NSIS header info
+      run: makensis -HDRINFO
+
+    - name: Compile demo.nsi
+      run: makensis -V4 demo.nsi
