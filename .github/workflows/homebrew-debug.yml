@@ -9,6 +9,8 @@ jobs:
   compile:
     runs-on: macos-latest
     steps:
+    - uses: actions/checkout@v2
+    
     - name: Prepare Installation
       run: |
         brew tap nsis-dev/makensis

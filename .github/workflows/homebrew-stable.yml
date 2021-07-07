@@ -9,22 +9,21 @@ jobs:
   compile:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-    # - name: Prepare Installation
-    #   run: |
-    #    brew update
-    #    brew cleanup
+    - uses: actions/checkout@v2
 
-    # - name: Install NSIS
-    #   run: brew install nsis --debug --verbose
+    - name: Prepare Installation
+      run: |
+       brew update
+       brew cleanup
 
-    # - name: Print NSIS version
-    #   run: makensis -VERSION
+    - name: Install NSIS
+      run: brew install nsis --debug --verbose
 
-    # - name: Print NSIS header info
-    #   run: makensis -HDRINFO
+    - name: Print NSIS version
+      run: makensis -VERSION
 
-      - name: Compile test-script
-        run: |
-          ls -la
-          ls -la $GITHUB_WORKSPACE
+    - name: Print NSIS header info
+      run: makensis -HDRINFO
+
+    - name: Compile test-script
+      run: makensis -V4 demo.nsi
