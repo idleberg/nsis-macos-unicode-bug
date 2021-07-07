@@ -37,5 +37,3 @@ jobs:
 
     - name: Run Node script
       run: node makensis.js
-      env:
-        WORKSPACE: $GITHUB_WORKSPACE
