@@ -16,7 +16,7 @@ jobs:
       run: env | sort
 
     - name: Prepare Installation
-      uses: keepitsimpletech/actions/setup-macports@setup-macports/releases/v1
+      uses: keepitsimpletech/actions/setup-macports@setup-macports
 
     - name: Install NSIS
       run: port install nsis
