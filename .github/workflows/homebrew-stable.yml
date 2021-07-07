@@ -24,4 +24,4 @@ jobs:
       run: makensis -HDRINFO
 
     - name: Compile test-script
-      run: makensis -V4 ./demo.nsi
+      run: makensis -V4 $GITHUB_WORKSPACE/demo.nsi
