@@ -1,0 +1,36 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        node-version: ['16', 'lts/*']
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Prepare Installation
+      run: |
+       brew update
+       brew cleanup
+
+    - name: Install NSIS
+      run: brew install nsis --debug --verbose
+
+    - name: Print NSIS version
+      run: makensis -VERSION
+
+    - name: Print NSIS header info
+      run: makensis -HDRINFO
+
+    - name: Run Node script
+      run: node makensis.js
