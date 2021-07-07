@@ -1,4 +1,4 @@
-name: NSIS
+name: Homebrew (stable)
 
 on:
   push:
