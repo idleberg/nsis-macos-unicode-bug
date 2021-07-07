@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build:
+  compile:
     runs-on: macos-latest
     steps:
     - name: Prepare Installation
@@ -21,7 +21,7 @@ jobs:
     - name: Print NSIS version
       run: makensis -VERSION
 
-    - name: Print NSIS compile flags
+    - name: Print NSIS header info
       run: makensis -HDRINFO
 
     - name: Compile test-script
